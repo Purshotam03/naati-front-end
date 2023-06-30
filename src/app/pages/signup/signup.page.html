@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Sign Up
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" [(ngModel)]="email" required></ion-input>
+    </ion-item>
+    <div class="validation-message" *ngIf="!emailValid">Please enter a valid email address.</div>
+
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" [(ngModel)]="password" required minlength="6"></ion-input>
+    </ion-item>
+    <div class="validation-message" *ngIf="!passwordValid">Password should be at least 6 characters long.</div>
+
+    <ion-item>
+      <ion-label position="floating">Confirm Password</ion-label>
+      <ion-input type="password" [(ngModel)]="confirmPassword" required></ion-input>
+    </ion-item>
+    <div class="validation-message" *ngIf="passwordMismatch">Passwords do not match.</div>
+
+    <ion-item>
+      <ion-label>Language</ion-label>
+      <ion-select [(ngModel)]="selectedLanguage">
+        <ion-select-option *ngFor="let language of languages" [value]="language.id">{{ language.name }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="full" (click)="signUp()">Sign Up</ion-button>
+</ion-content>

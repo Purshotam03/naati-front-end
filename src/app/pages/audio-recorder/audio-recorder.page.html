@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Audio Recorder
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div >
+    <ion-button (click)="startAudio()" [disabled]="isRecording">Start Audio</ion-button>
+    <ion-button (click)="stopRecording()" [disabled]="!isRecording">Stop Recording</ion-button>
+
+    <div #waveform1 id="waveform1" ></div>
+    <div #waveform id="waveform" ></div>
+  </div>
+
+  <div >
+    <div #waveformreview id="waveformreview" ></div>
+    <div #waveformreview1 id="waveformreview1" ></div>
+    <ion-button (click)="playAudio()" [disabled]="isRecording || !isRecordingCompleted">Play Question</ion-button>
+    <ion-button (click)="playAudioAnswer()" [disabled]="isRecording || !isRecordingCompleted">Play Answer</ion-button>
+    <ion-button (click)="next()" [disabled]="isRecording || !isRecordingCompleted">Next</ion-button>
+  </div>
+
+</ion-content>

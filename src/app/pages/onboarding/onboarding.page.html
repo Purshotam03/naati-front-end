@@ -1,0 +1,43 @@
+
+<ion-content>
+  <swiper #swiper [config]="config" >
+    <ng-template swiperSlide style="height: 100%">
+      <!-- Slide 1 Content -->
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Welcome to the App</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Slide 1 description</p>
+        </ion-card-content>
+      </ion-card>
+    </ng-template>
+
+    <ng-template swiperSlide>
+      <!-- Slide 2 Content -->
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Getting Started</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Slide 2 description</p>
+        </ion-card-content>
+      </ion-card>
+    </ng-template>
+
+    <ng-template swiperSlide>
+      <!-- Slide 3 Content -->
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Explore the Features</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Slide 3 description</p>
+        </ion-card-content>
+        <ion-button expand="full" (click)="continueOnboarding()" *ngIf="isLastSlide()">Continue</ion-button>
+      </ion-card>
+    </ng-template>
+  </swiper>
+
+
+</ion-content>
